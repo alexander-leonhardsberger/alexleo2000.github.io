@@ -1,0 +1,40 @@
+.img {
+    width: 30%;
+    align-self: left;
+}
+
+.logo {
+    width: 35%;
+}
+
+.div-bottom{
+    position: absolute; 
+    bottom: 0;
+}
+
+.header {
+    font-size: 30px;
+}
+
+.signature {
+    border: 0;
+    border-bottom: 1px solid #000;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .signature-pad {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:400px;
+    height:200px;
+  }

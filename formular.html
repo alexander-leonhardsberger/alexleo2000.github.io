@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="formular.css" rel="stylesheet">
+    <script src="formular.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron container-fluid">
+        <div style="overflow:hidden">
+            <div>
+                <img class="img" src="foto.png" alt="" align="left" />
+            </div>
+            <div>
+                <img class="logo" src="logo.png" align="right" />
+            </div>
+        </div>
+        <div align="right">
+            <p class="header">
+                Wasser / Frucht / Kaffee &#9899; Automaten Sturmberger
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container-fluid" align="right">
+        <p>
+            4341 Arbing / Technologiestraße 3<br> T. +43(0)664 221 81 08<br> F. +43(0) 7238 29105<br> M. office@energywater.at
+        </p>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm col">
+                <strong style="font-size:40px;">Service-Bericht</strong>
+            </div>
+            <div class="col-sm col" align="right">
+                <strong style="font-size:40px; color:#696969">www.energywater.at</strong>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <form>
+            <label>
+                <input type="radio" name="auswahl" value="Reperatur">Reparatur
+        </label>
+            <label>
+            <input type="radio" name="auswahl" value="Wartung"> Wartung
+        </label>
+            <label class="form-check-label">
+            <input type="radio" name="auswahl" value="Installation"> Installation
+        </label>
+            <label>
+            <input type="radio" name="auswahl" value="Tausch">Tausch
+        </label>
+        </form>
+    </div>
+
+    <table class="table table-bordered col-sm">
+        <tr>
+            <div class="row container-fluid">
+                <div align:center class="col">
+                    Zu Auftr.-Nr.:<br><textarea rows="3" cols="90" type="text" name="auftrag"></textarea>
+                </div>
+                <div align:center class="col">
+                    Name Techniker:<br><textarea rows="3" cols="90" type="text" name="techniker"></textarea>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <div class="row container-fluid">
+                <div align:center class="col">
+                    Kunden-Nr.:<br><textarea rows="3" cols="90" type="text" name="kunde-nr"></textarea>
+                </div>
+                <div align:center class="col">
+                    Fahrzeug:<br><textarea rows="3" cols="90" type="text" name="fahrzeug"></textarea>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <div class="row container-fluid">
+                <div align:center class="col">
+                    Kunde:<br><textarea rows="3" cols="90" type="text" name="kunde"></textarea>
+                </div>
+                <div align:center class="col">
+                    Straße, Nr.:<br><textarea rows="3" cols="90" type="text" name="straße"></textarea>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <div class="row container-fluid">
+                <div align:center class="col">
+                    Anfahrt (Uhrzeit):<br><input id="time" type="time">
+                </div>
+                <div align:center class="col">
+                    Abfahrt (Uhrzeit):<br><input id="time" type="time">
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <div class="row container-fluid">
+                <div align:center class="col">
+                    Ansprechpartner:<br><textarea rows="1" cols="90" type="text" name="partner"></textarea>
+                </div>
+                <div align:center class="col">
+                    Arbeitszeit:<br><input id="time" type="time">
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <div class="row container-fluid">
+                <div align:center class="col">
+                    Telefon:<br><textarea rows="1" cols="90" type="text" name="telefon"></textarea>
+                </div>
+                <div align:center class="col">
+                    Gefahrene Kilometer:<br><textarea rows="1" cols="90" type="text" name="kilometer"></textarea>
+                </div>
+            </div>
+        </tr>
+    </table>
+
+
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm col container-fluid">
+                <td>
+
+                    <table id="tableGer" class="table table-bordered">
+                        <thead class="thead-light">
+                            <th colspan="2">
+                                Gerät/Serien-Nr., Standort oder Reperaturbericht
+                            </th>
+                        </thead>
+                        <tr>
+                            <td>
+                                <p id="geraet"></p>
+                            </td>
+                            <td>
+                                <textarea rows="5" cols="90" type="text" name="gerät"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="row">
+                                    <button class="col btn btn-success" id="add" onclick="addGer()">+</button>
+                                    <button class="col btn btn-danger" id="del" onclick="delGer()">-</button>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </table>
+
+                    <div class="col">
+                        <p>
+                            Nächste Wartung: <input type="date" name="naechste-wartung" min="2000-01-02"><br><br>
+                        </p>
+                    </div>
+                </td>
+            </div>
+            <div class="col-sm col container-fluid">
+                <td>
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <th>
+                                Wartungsarbeiten
+                            </th>
+                            <th>
+                                Gerät/Serien-Nr.
+                            </th>
+                        </thead>
+                        <tr>
+                            <td>
+                                Sichtprüfung
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="checkbox" value="sichtprüfung"> OK
+                            </label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Filter gewechselt
+                            </td>
+                            <td>
+                                <label>
+                                <input type="checkbox" value="filter"> OK  
+                            </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                UV-Lampe gewechselt
+                            </td>
+                            <td>
+                                <input type="checkbox" value="uv-lampe"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Reinigungsmittel ein/ausgespült
+                            </td>
+                            <td>
+                                <input type="checkbox" value="reinigungsmittel"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Aquastopfunktion geprüft
+                            </td>
+                            <td>
+                                <input type="checkbox" value="stopfunktion"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                CO2 und Wasserdichtigkeit geprüft
+                            </td>
+                            <td>
+                                <input type="checkbox" value="co2"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Ausgabeknopf gereinigt
+                            </td>
+                            <td>
+                                <input type="checkbox" value="ausgabeknopf"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Spenderdüse und Ausgabe gereinigt
+                            </td>
+                            <td>
+                                <input type="checkbox" value="düse"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Entkalkung durchgeführt
+                            </td>
+                            <td>
+                                <input type="checkbox" value="entkalkung"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Funktionsprüfung fehlerfrei durchgeführt
+                            </td>
+                            <td>
+                                <input type="checkbox" value="funktionsprüfung"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Bedienungseinweisung erfolgt
+                            </td>
+                            <td>
+                                <input type="checkbox" value="einweisung"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                keine Sichtbaren Mängel vorhanden
+                            </td>
+                            <td>
+                                <input type="checkbox" value="Mängel"> OK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Zustand (Note 1-6)
+                            </td>
+                            <td>
+                                <select name="Zustand">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table id="tablemab" class="table table-bordered">
+                        <thead class="thead-light">
+                            <th>
+                                Menge
+                            </th>
+                            <th>
+                                Artikel-Nr.
+                            </th>
+                            <th>
+                                Bezeichnung
+                            </th>
+                        </thead>
+                        <tr>
+                            <td>
+                                <input class="container" type="number">
+                            </td>
+                            <td>
+                                <input class="container" type="number">
+                            </td>
+                            <td>
+                                <input class="container" type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="row">
+                                    <button class="col btn btn-success" id="addMab" onclick="addmab()">+</button>
+                                    <button class="col btn btn-danger" id="delMab" onclick="delmab()">-</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="col">
+            <p class="col div-bottom" id="date"></p>
+        </div>
+
+        <div class="col">
+            <img class="img div-bottom" style="border-bottom: 1px solid #000;" src="signature.png" alt="" align="left" />
+        </div>
+
+        <div class="wrapper signature">
+            <canvas id="unterschriftKunde" class="signature-pad" width=400 height=200></canvas>
+            
+        </div>
+        
+
+    </div>
+    <button id="prepare" onclick="prepareForPDF()">Prepare for PDF</button>
+    <button id="clear" style="float:right">Clear</button>
+    <script src="formular.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+</head>
+
+<body>
+
+<center>
+<form>
+  <fieldset>
+    <legend style="font-size:250%">Persönliche Informationen:</legend>
+    Vorname:<br>
+    <input placeholder="Vorname"type="text" name="firstname" >
+    <br>
+    Nachname:<br>
+    <input placeholder="Nachname" type="text" name="lastname" >
+    <br><hr noshade>
+	Geschlecht: <br>
+	
+	<input type="radio" name="sex" value="male" checked>Male
+	<br>
+	<input type="radio" name="sex" value="female">Female
+	<br><hr noshade>
+	
+	Email-Adresse:
+	<input placeholder="Email-Adresse" type="text" name="email" >
+    <hr noshade>
+	
+	Homepage-Adresse:
+	<input placeholder="Homepage-Adresse" type="text" name="homepage" >
+    <hr noshade>
+	
+	Wohnbezirk (PE, FR, UU, AM, LL, L, … )<br> 
+	<input type="text"  name="bezirk" placeholder="Wohnbezirk">
+	<hr noshade>
+	
+	Gib dein Geburtsdatum ein (darf nicht vor 1.1.1900 liegen):<br>
+	<input type="date" name="birthday" min="1900-01-01">
+	<hr noshade>
+	
+	Hobbys:<br> 
+	<textarea name="hobbys" rows="4" cols="50" placeholder="Ihre Hobbys"></textarea>
+	<hr noshade>
+	
+	Sonstige Kommentare:<br>
+	<textarea rows="4" cols="50" placeholder="Ihr Kommentar"></textarea><br>
+	
+	
+	
+    <input onclick="alert('Gratulation Sie haben das Formular erfolgreich ausgefüllt!')" type="submit" value="Submit">
+	
+	
+  
+  </fieldset>
+
+  
+</form>
+</center>
+
+
+
+
+</body>
+
+</html>
